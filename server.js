@@ -3,14 +3,11 @@ const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
-// mongoose.connect("mongodb://localhost:27017/breads", {useNewUrlParser: true, useUnifiedTopology: true})
-
-// mongoose.connect('MONGO_URI')
-
 // CONFIGURATION
 require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
+
 
 // mongoose.connect("mongodb://localhost:27017/breads", {useNewUrlParser: true, useUnifiedTopology: true})
 
