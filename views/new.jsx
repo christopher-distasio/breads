@@ -1,30 +1,35 @@
 const React = require('react')
 const Default = require('./layouts/Default')
 
-function Show ({bread,index}) {
-  // confirm we are getting our bread data in terminal
-  // console.log(bread.name)
+function New () {
     return (
       <Default>
-        <h3>{bread.name}</h3>
-        <p>
-          and it
-          {
-            bread.hasGluten
-            ? <span> does </span>
-            : <span> does NOT </span>
-          }
-          have gluten.
-        </p>
-        <img src={bread.image} alt={bread.name} />
-        <a href={`/breads/${index}/edit`}><button>Edit</button></a>
-        <form action={`/breads/${index}?_method=DELETE`} method="POST">
-          <input type='submit' value="DELETE"/>
+        <h2>Add a new bread</h2>
+        <form action="/breads" method="POST">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+          />
+          <label htmlFor="image">Image</label>
+          <input
+            type="text"
+            name="image"
+            id="image"/>
+          <label htmlFor="hasGluten">Has Gluten?</label>
+          <input
+            type="checkbox"
+            name="hasGluten"
+            id="hasGluten"
+            defaultChecked
+          />
+          <br />
+          <input type="submit"/>
         </form>
-
-        <li><a href="/breads">Go home</a></li>
       </Default>
     )
 }
 
-module.exports = Show
+module.exports = New
